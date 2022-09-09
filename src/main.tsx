@@ -10,8 +10,7 @@ import global_en from "./translations/en/global.json";
 const userLocale =
   navigator.languages && navigator.languages.length
     ? navigator.languages[0]
-    : navigator.language;
-    console.log(userLocale); // 👉️ "en-US"
+    : navigator.language; // 👉️ "en-US"
 
 i18next.init({
   interpolation: { escapeValue: false }, // React already does escaping
