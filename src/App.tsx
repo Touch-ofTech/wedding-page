@@ -4,17 +4,18 @@ import { Form } from "./sections/form/Form";
 import { Header } from "./sections/header/Header";
 import { Middle } from "./sections/middle/Middle";
 import { Toaster } from "react-hot-toast";
-import { AiFillSound } from "react-icons/ai";
+import { AiFillSound, AiOutlinePause } from "react-icons/ai";
+import useAudio from "beautiful-react-hooks/useAudio";
 import arco from "./assets/arco.mp3";
 
 function App() {
-  let audio = new Audio(arco);
+  const [state, controls] = useAudio(arco, { autoPlay: true });
 
   const handleSound = (audElemnt: any) => {
-    if (audElemnt.paused) {
-      audElemnt.play();
+    if (audElemnt.isPlaying === false) {
+      controls.play();
     } else {
-      audElemnt.pause();
+      controls.pause();
     }
   };
 
@@ -33,9 +34,9 @@ function App() {
           cursor: "pointer",
         }}
         id="audio"
-        onClick={() => handleSound(audio)}
+        onClick={() => handleSound(state)}
       >
-        <AiFillSound />
+        {state.isPlaying ? <AiOutlinePause /> : <AiFillSound />}
       </button>
       <Toaster />
       <Header />

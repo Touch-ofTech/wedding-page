@@ -8,12 +8,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "i18next": "^21.8.11",
+    "beautiful-react-hooks": "^3.11.1",
     "firebase": "^9.9.3",
+    "i18next": "^21.8.11",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-i18next": "^11.17.4",
     "react-hot-toast": "^2.3.0",
+    "react-i18next": "^11.17.4",
     "react-icons": "^4.4.0",
     "react-scripts": "^5.0.1",
     "react-toastify": "^9.0.8",
