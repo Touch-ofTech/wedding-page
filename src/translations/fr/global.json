@@ -20,7 +20,9 @@
     "dedicate": "Dedicate a message",
     "recomendations": "Recommandations",
     "posible": "Il est possible de rester sur le lieu de la fête",
-    "reservation": "nous avons réservé{{guestConf}} places en son honneur.",
-    "limit": "Limite de validation 25/11/2022"
+    "reservation_one": "nous avons réservé {{count}} place en son honneur.",
+    "reservation_other": "nous avons réservé {{count}} places en son honneur.",
+    "limit": "Limite de validation 25/11/2022",
+    "no-guest": "Veuillez utiliser le lien d'invitation"
   }
 }
