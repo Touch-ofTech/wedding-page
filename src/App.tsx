@@ -7,6 +7,7 @@ import { Toaster } from "react-hot-toast";
 import { AiFillSound, AiOutlinePause } from "react-icons/ai";
 import useAudio from "beautiful-react-hooks/useAudio";
 import arco from "./assets/arco.mp3";
+import { useMemo } from "react";
 
 function App() {
   const [state, controls] = useAudio(arco, { autoPlay: true });
@@ -41,7 +42,13 @@ function App() {
       <Toaster />
       <Header />
       <Middle />
-      <Form />
+      {useMemo(
+        () => (
+          <Form />
+        ),
+        []
+      )}
+
       <Footer />
     </main>
   );
