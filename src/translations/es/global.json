@@ -21,8 +21,10 @@
     "message_success": "Haz confirmado ir a la boda de Mariana y Carlos! ",
     "recomendations": "Recomendaciones",
     "posible": "Es posible hospedarse en el lugar de la fiesta",
-    "reservation": "Hemos reservado {{guestConf}} lugares en su honor.",
-    "limit": "Limete de confirmacion 25/11/2022"
+    "reservation_one": "Hemos reservado {{count}} lugar en su honor.",
+    "reservation_other": "Hemos reservado {{count}} lugares en su honor.",
+    "limit": "Limete de confirmacion 25/11/2022",
+    "no-guest": "Favor de utilizar link de invitación"
   }
 }
 
