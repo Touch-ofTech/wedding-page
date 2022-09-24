@@ -4,7 +4,6 @@ import { doc, getDoc } from "firebase/firestore";
 import "./Form.scss";
 import db from "../../firebase";
 import toast from "react-hot-toast";
-import { t } from "i18next";
 import { useTranslation } from "react-i18next";
 
 export const Form = () => {
@@ -24,7 +23,7 @@ export const Form = () => {
 
   const guest = urlParams.get("guest");
   const [nameConf, setNameConf] = useState("");
-  const [guestConf, setGuestConf] = useState("");
+  const [guestConf, setGuestConf] = useState<any>("");
   const [confirmed, setConfirmed] = useState(false);
   const getInfo = async () => {
     const docRef = doc(db, "guests", `${guest}`);
@@ -35,7 +34,7 @@ export const Form = () => {
       setGuestConf(guests);
       setConfirmed(confirm);
     } else {
-      console.log("No such document!");
+      return
     }
   };
   getInfo();
@@ -59,7 +58,9 @@ export const Form = () => {
           <h2 className="form-header-title">{t("message.limit")}</h2>
           <h1 className="form-header-guest">{nameConf}</h1>
           <h2 className="form-header-invites">
-            {t("message.reservation", { guestConf: guestConf })}
+            {guest === null
+              ? t("message.no-guest")
+              : t("message.reservation", { count: guestConf })}
           </h2>
         </div>
 
@@ -67,7 +68,7 @@ export const Form = () => {
           type="submit"
           className="confirm-button"
           onClick={updateConfirm}
-          disabled={confirmed}
+          disabled={confirmed || guest === null}
         >
           {t("message.submit")}
         </button>
