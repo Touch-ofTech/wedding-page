@@ -24,7 +24,8 @@
     "reservation_one": "Hemos reservado {{count}} lugar en su honor.",
     "reservation_other": "Hemos reservado {{count}} lugares en su honor.",
     "limit": "Limete de confirmacion 25/11/2022",
-    "no-guest": "Favor de utilizar link de invitación"
+    "no-guest": "Favor de utilizar link de invitación",
+    "confirmation": "Ya has confirmado asistencia"
   }
 }
 

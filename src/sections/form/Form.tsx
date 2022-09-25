@@ -34,7 +34,7 @@ export const Form = () => {
       setGuestConf(guests);
       setConfirmed(confirm);
     } else {
-      return
+      return;
     }
   };
   getInfo();
@@ -70,7 +70,7 @@ export const Form = () => {
           onClick={updateConfirm}
           disabled={confirmed || guest === null}
         >
-          {t("message.submit")}
+          {confirmed ? t("message.confirmation") : t("message.submit")}
         </button>
       </div>
     </section>
