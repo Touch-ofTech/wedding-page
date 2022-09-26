@@ -24,6 +24,8 @@
     "reservation_other": "We have reserved {{count}} places in your honor.",
     "limit": "Confirmation limit 25/11/2022",
     "no-guest": "Please use invitation link",
-    "confirmation": "You have already confirmed attendance"
+    "confirmation": "You have already confirmed attendance",
+    "code": "Dress Code",
+    "code-text": "Formal, Not White *"
   }
 }

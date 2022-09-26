@@ -24,6 +24,8 @@
     "reservation_other": "nous avons réservé {{count}} places en son honneur.",
     "limit": "Limite de validation 25/11/2022",
     "no-guest": "Veuillez utiliser le lien d'invitation",
-    "confirmation": "Vous avez déjà confirmé votre présence"
+    "confirmation": "Vous avez déjà confirmé votre présence",
+    "code": "Código de Vestimenta",
+    "code-text": "Formal, No Blanco *"
   }
 }
