@@ -8,6 +8,7 @@ import { AiFillSound, AiOutlinePause } from "react-icons/ai";
 import useAudio from "beautiful-react-hooks/useAudio";
 import arco from "./assets/arco.mp3";
 import { useMemo } from "react";
+import { Dress } from "./sections/dress/Dress";
 
 function App() {
   const [state, controls] = useAudio(arco, { autoPlay: true });
@@ -42,6 +43,7 @@ function App() {
       <Toaster />
       <Header />
       <Middle />
+      <Dress/>
       {useMemo(
         () => (
           <Form />
