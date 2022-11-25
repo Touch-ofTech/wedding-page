@@ -55,7 +55,7 @@ export const Form = () => {
           <span className="error-text">{t("message.event")}*</span>
         </div>
         <div className="form-middle-container">
-          <h2 className="form-header-title">{t("message.limit")}</h2>
+          {/* <h2 className="form-header-title">{t("message.limit")}</h2> */}
           <h1 className="form-header-guest">{nameConf}</h1>
           <h2 className="form-header-invites">
             {guest === null
