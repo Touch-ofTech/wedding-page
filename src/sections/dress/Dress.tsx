@@ -1,16 +1,16 @@
-import { useTranslation } from "react-i18next";
-import dress from "../../assets/dress_code.svg";
-import "./Dress.scss";
+import { useTranslation } from 'react-i18next';
+import dress from '../../assets/dress_code.svg';
+import './Dress.scss';
 
 export const Dress = () => {
-  const [t, i18n] = useTranslation("global");
+  const [t, i18n] = useTranslation('global');
 
   return (
     <section className="dress-code-container" id="form">
       <div className="card-dress-container">
         <div className="header--form-container">
-          <h1 className="dress-header">{t("message.code")}</h1>
-          <span className="card-text">{t("message.code-text")}</span>
+          <h1 className="dress-header">{t('message.code')}</h1>
+          <span className="card-text">{t('message.code-text')}</span>
         </div>
         <div className="bottom-container">
           <img src={dress} alt="dress" className="dress-img" />

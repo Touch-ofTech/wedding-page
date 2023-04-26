@@ -1,14 +1,11 @@
-import "./App.scss";
-import { Footer } from "./sections/footer/Footer";
-import { Form } from "./sections/form/Form";
-import { Header } from "./sections/header/Header";
-import { Middle } from "./sections/middle/Middle";
-import { Toaster } from "react-hot-toast";
-import { AiFillSound, AiOutlinePause } from "react-icons/ai";
-import useAudio from "beautiful-react-hooks/useAudio";
-import arco from "./assets/arco.mp3";
-import { useMemo } from "react";
-import { Dress } from "./sections/dress/Dress";
+import { Header } from './sections/header/Header';
+import { Middle } from './sections/middle/Middle';
+import { Toaster } from 'react-hot-toast';
+import { AiFillSound, AiOutlinePause } from 'react-icons/ai';
+import useAudio from 'beautiful-react-hooks/useAudio';
+import arco from './assets/arco2.mp3';
+import { Dress } from './sections/dress/Dress';
+import './App.scss';
 
 function App() {
   const [state, controls] = useAudio(arco, { autoPlay: true });
@@ -22,18 +19,18 @@ function App() {
   };
 
   return (
-    <main style={{ position: "relative" }}>
+    <main>
       <button
         className="button-music"
         style={{
-          position: "sticky",
-          background: "transparent",
-          border: "none",
-          fontSize: "24px",
-          top: "15px",
-          right: "15px",
-          zIndex: "20",
-          cursor: "pointer",
+          position: 'fixed',
+          background: 'transparent',
+          border: 'none',
+          fontSize: '24px',
+          top: '15px',
+          right: '15px',
+          zIndex: '20',
+          cursor: 'pointer',
         }}
         id="audio"
         onClick={() => handleSound(state)}
@@ -43,15 +40,15 @@ function App() {
       <Toaster />
       <Header />
       <Middle />
-      <Dress/>
-      {useMemo(
+      <Dress />
+      {/* {useMemo(
         () => (
           <Form />
         ),
         []
-      )}
+      )} */}
 
-      <Footer />
+      {/* <Footer /> */}
     </main>
   );
 }
