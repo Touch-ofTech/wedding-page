@@ -162,9 +162,10 @@
     margin-top: 60px;
     position: relative;
     z-index: 2;
+    // padding: 0 24px;
     @media (max-width: 430px) {
       padding: 5px;
-      width: 375px;
+      width: 345px;
       grid-template-columns: repeat(4, 1fr);
     }
     .middle-count-header {

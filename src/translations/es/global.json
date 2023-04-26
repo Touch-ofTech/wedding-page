@@ -1,15 +1,15 @@
 {
   "message": {
-    "primary": "Nos conocimos en una era difícil,pero eso no impidió que el amor fuera creciendo,los dos teníamos sentimientos encontrados el uno por el otro y así sin más hemos llegado hasta aquí.",
+    "primary": "Amar es encontrar en la felicidad del otro, la propia felicidad.",
     "party": "Fiesta",
     "left": "Faltan",
     "days": "Días",
-    "direction": "Carretera Comala San Antonio - Colima México s/n Kilometro 11.5 Cofradía de Suchitlán.",
+    "direction": "San Diego 2070, Residencial Santa María, 28018 Colima, Col.",
     "takeme": "Llévame",
     "hours": "Horas",
     "minutes": "Minutos",
     "seconds": "Segundos",
-    "month": "Diciembre",
+    "month": "Mayo",
     "confirm": "Confirma tu asistencia",
     "event": "Evento sin niños.",
     "name": "Nombre Completo",
@@ -27,6 +27,6 @@
     "no-guest": "Favor de utilizar link de invitación",
     "confirmation": "Ya has confirmado asistencia",
     "code": "Código de Vestimenta",
-    "code-text": "Formal, Mujeres no Blanco *"
+    "code-text": "Formal*"
   }
 }
