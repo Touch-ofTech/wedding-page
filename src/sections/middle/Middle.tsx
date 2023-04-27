@@ -36,7 +36,7 @@ export const Middle = () => {
           {t('message.direction')}📍
         </span>
         <div className="middle-middle-bottom-container">
-          <span className="middle-middle-bottom-text">7:00 pm</span>
+          <span className="middle-middle-bottom-text">6:00 pm</span>
           <a
             href="https://goo.gl/maps/8twwiu7y39Yob1Vc7"
             target="_blank"
