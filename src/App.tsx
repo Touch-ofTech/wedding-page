@@ -48,9 +48,8 @@ function App() {
           <Form />
         ),
         []
-      )} 
+      )}
 
-      {/* <Footer /> */}
     </main>
   );
 }
