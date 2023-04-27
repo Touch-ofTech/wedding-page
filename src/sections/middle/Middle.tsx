@@ -38,7 +38,7 @@ export const Middle = () => {
         <div className="middle-middle-bottom-container">
           <span className="middle-middle-bottom-text">7:00 pm</span>
           <a
-            href="https://goo.gl/maps/ryFsEraFNHk6YfXn7"
+            href="https://goo.gl/maps/8twwiu7y39Yob1Vc7"
             target="_blank"
             className="middle-link"
           >

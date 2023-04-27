@@ -1,76 +1,113 @@
-import { useState } from "react";
-import { doc, getDoc } from "firebase/firestore";
-
-import "./Form.scss";
-import db from "../../firebase";
-import toast from "react-hot-toast";
-import { useTranslation } from "react-i18next";
+import { useState } from 'react';
+import { addDoc, collection } from 'firebase/firestore';
+import db from '../../firebase';
+import toast from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
+import './Form.scss';
 
 export const Form = () => {
-  const [t, i18n] = useTranslation("global");
+  const [t, i18n] = useTranslation('global');
 
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    numberGuests: "",
-    guesstOne: "",
-    guesstTwo: "",
-    dedication: "",
+    nombre: '',
+    invitados: '',
+    confirmado: true,
   });
 
-  const queryString = window.location.search;
-  const urlParams: any = new URLSearchParams(queryString);
-
-  const guest = urlParams.get("guest");
-  const [nameConf, setNameConf] = useState("");
-  const [guestConf, setGuestConf] = useState<any>("");
   const [confirmed, setConfirmed] = useState(false);
-  const getInfo = async () => {
-    const docRef = doc(db, "guests", `${guest}`);
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
-      const { name, guests, confirm } = docSnap.data();
-      setNameConf(name);
-      setGuestConf(guests);
-      setConfirmed(confirm);
-    } else {
-      return;
-    }
-  };
-  getInfo();
 
-  const updateConfirm = () => {
-    db.collection("guests").doc(guest).update({ confirm: true });
-    toast.success("Haz confirmado ir a la boda de Mariana y Carlos! 🐈‍⬛ 🐈", {
-      duration: 5000,
-      position: "top-center",
+  const onchange = (e: any) => {
+    setFormData((pre) => {
+      return {
+        ...pre,
+        [e.target.name]:
+          e.target.name === 'confirmado'
+            ? !formData.confirmado
+            : e.target.value,
+      };
     });
+  };
+
+  const updateConfirm = async () => {
+    try {
+      const docRef = await addDoc(collection(db, 'bodaIsaura'), {
+        nombre: formData.nombre,
+        invitados: formData.confirmado ? formData.invitados : 0,
+        confirmado: formData.confirmado,
+      });
+
+      toast.success(
+        `${
+          formData.confirmado
+            ? 'Haz confirmado ir a la boda de Isaura & Alfonso! ♥️'
+            : 'Gracias por tu respuesta.'
+        }`,
+        {
+          duration: 5000,
+          position: 'top-center',
+        }
+      );
+    } catch (e) {
+      console.error('Error adding document: ', e);
+    }
   };
 
   return (
     <section className="form-container" id="form">
       <div className="card-form-container">
         <div className="header--form-container">
-          <h1 className="form-header">{t("message.confirm")}</h1>
-          <span className="error-text">{t("message.event")}*</span>
+          <h1 className="form-header">{t('message.confirm')}</h1>
         </div>
-        <div className="form-middle-container">
-          {/* <h2 className="form-header-title">{t("message.limit")}</h2> */}
-          <h1 className="form-header-guest">{nameConf}</h1>
-          <h2 className="form-header-invites">
-            {guest === null
-              ? t("message.no-guest")
-              : t("message.reservation", { count: guestConf })}
-          </h2>
+        <div className="form__confirmation--inputs">
+          <label htmlFor="" className="form__input--container">
+            Nombre Invitado
+            <input
+              className="textbox"
+              type="text"
+              placeholder="Ingresar Nombre.."
+              name="nombre"
+              onChange={(e) => onchange(e)}
+              value={formData.nombre}
+            />
+          </label>
+          <label htmlFor="" className="form__input--container">
+            Acompañantes
+            <input
+              className="textbox"
+              type="number"
+              placeholder="Ingresar Numero.."
+              name="invitados"
+              disabled={!formData.confirmado}
+              onChange={(e) => onchange(e)}
+              value={formData.invitados}
+            />
+          </label>
+          <label htmlFor="" className="form__input--container check">
+            No asistiré
+            <input
+              className="form__box-check"
+              type="checkbox"
+              placeholder="Ingresar Numero.."
+              name="confirmado"
+              onChange={(e) => onchange(e)}
+              checked={!formData.confirmado}
+              // @ts-ignore
+              value={formData.confirmado}
+            />
+          </label>
         </div>
 
         <button
           type="submit"
           className="confirm-button"
           onClick={updateConfirm}
-          disabled={confirmed || guest === null}
+          disabled={
+            formData.confirmado
+              ? formData.nombre.length === 0 || formData.invitados.length === 0
+              : formData.nombre === ''
+          }
         >
-          {confirmed ? t("message.confirmation") : t("message.submit")}
+          {confirmed ? t('message.submit') : t('message.submit')}
         </button>
       </div>
     </section>
