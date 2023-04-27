@@ -8,7 +8,7 @@ export const useCountDown = () => {
   const [counter, setCounter] = useState(0);
   const countdown = () => {
     const now:any = new Date();
-    const endDate = new Date("May 06 2023 00:00:00").getTime();
+    const endDate = new Date("May 06 2023 19:30:00").getTime();
     const difference = endDate - now;
     const seconds = 1000;
     const minutes = seconds * 60;

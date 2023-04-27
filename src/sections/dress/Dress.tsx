@@ -12,9 +12,13 @@ export const Dress = () => {
           <h1 className="dress-header">{t('message.code')}</h1>
           <span className="card-text">{t('message.code-text')}</span>
         </div>
-        <div className="bottom-container">
-          <img src={dress} alt="dress" className="dress-img" />
+        <div className="header--form-container">
+          <h1 className="dress-header">Tipo de Regalo</h1>
+          <span className="card-text">Libre</span>
         </div>
+        {/* <div className="bottom-container">
+          <img src={dress} alt="dress" className="dress-img" />
+        </div> */}
       </div>
     </section>
   );

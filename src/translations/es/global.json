@@ -1,6 +1,6 @@
 {
   "message": {
-    "primary": "Amar es encontrar en la felicidad del otro, la propia felicidad.",
+    "primary": "Amar es encontrar en la felicidad del otro, la propia felicidad, Acompáñanos a nuestra boda civil.",
     "party": "Fiesta",
     "left": "Faltan",
     "days": "Días",
@@ -27,6 +27,6 @@
     "no-guest": "Favor de utilizar link de invitación",
     "confirmation": "Ya has confirmado asistencia",
     "code": "Código de Vestimenta",
-    "code-text": "Formal*"
+    "code-text": "Formal"
   }
 }
