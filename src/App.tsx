@@ -5,9 +5,9 @@ import { AiFillSound, AiOutlinePause } from 'react-icons/ai';
 import useAudio from 'beautiful-react-hooks/useAudio';
 import arco from './assets/arco2.mp3';
 import { Dress } from './sections/dress/Dress';
-import './App.scss';
 import { Form } from './sections/form/Form';
 import { useMemo } from 'react';
+import './App.scss';
 
 function App() {
   const [state, controls] = useAudio(arco, { autoPlay: true });
