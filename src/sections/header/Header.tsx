@@ -10,9 +10,9 @@ export const Header = () => {
   return (
     <section className="header-container">
       <div className="header-label-container">
-        <h1 className="header-title">Isaura & Alfonso</h1>
+        <h1 className="header-title">Kimberly Lizbeth Padilla Vera</h1>
         <h3 className="header-subtitle">
-          {t('message.month')} 06,2023 - Terraza Santa Julia.
+          {t('message.month')} 16,2023.
         </h3>
         <a href="#middle">
           <img src={arrow} alt="arrow" className="header-mobile-arrow" />
