@@ -74,9 +74,9 @@ export const Middle = () => {
         <span className="middle-middle-location">
           Rancho los Padilla en el Manrique
         </span>
-        <span className="middle-middle-address">
+        {/* <span className="middle-middle-address">
           {t('message.direction')}📍
-        </span>
+        </span> */}
         <div className="middle-middle-bottom-container">
           <span className="middle-middle-bottom-text">7:30 pm</span>
           {/* <a

@@ -1,5 +1,6 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
+import { getDatabase } from 'firebase/database';
 
 
 const firebaseConfig = {
@@ -14,5 +15,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const firebaseApp = firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-export default db;
+// const db = firebase.firestore();
+// export default db;
+export const db = getDatabase(firebaseApp);

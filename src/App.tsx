@@ -3,11 +3,11 @@ import { Middle } from './sections/middle/Middle';
 import { Toaster } from 'react-hot-toast';
 import { AiFillSound, AiOutlinePause } from 'react-icons/ai';
 import useAudio from 'beautiful-react-hooks/useAudio';
-import arco from './assets/arco2.mp3';
+import arco from './assets/arco4.mp3';
 import { Dress } from './sections/dress/Dress';
-import { Form } from './sections/form/Form';
-import { useMemo } from 'react';
+import { Confirmation } from './sections/confirmation/Confirmation';
 import './App.scss';
+import { useEffect } from 'react';
 
 function App() {
   const [state, controls] = useAudio(arco, { autoPlay: true });
@@ -42,14 +42,17 @@ function App() {
       <Toaster />
       <Header />
       <Middle />
+      <Confirmation />
       <Dress />
-      {useMemo(
+      {/* {useMemo(
         () => (
           <Form />
         ),
         []
-      )}
-
+      )} */}
+      {/* <footer className="footer">
+        Touch of tech 
+      </footer> */}
     </main>
   );
 }
