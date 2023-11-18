@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
+import { onValue,ref } from "firebase/database";
+
 
 import "./Confirmation.scss";
-import db from "../../firebase";
+import {db} from "../../firebase";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 
@@ -20,28 +22,43 @@ export const Confirmation = () => {
 
   const queryString = window.location.search;
   const urlParams: any = new URLSearchParams(queryString);
-
+const [testeandp, settesteandp] = useState([])
   const guest = urlParams.get("guest");
+  // console.log(guest)
   const [nameConf, setNameConf] = useState("");
   const [guestConf, setGuestConf] = useState<any>("");
   const [confirmed, setConfirmed] = useState(false);
   const getInfo = async () => {
-    const docRef = doc(db, "guests", `${guest}`);
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
-      const { name, guests, confirm } = docSnap.data();
-      setNameConf(name);
-      setGuestConf(guests);
-      setConfirmed(confirm);
-    } else {
-      return;
-    }
+    onValue(ref(db),snapshot=>{
+      const data = snapshot.val();
+      if(data !== null){
+        Object.values(data).map(test=>{
+          settesteandp(oldArr=>[...oldArr,test])
+        })
+      }
+    })
+    // const docRef = doc(db, "invites", `${guest}`);
+    // const docSnap = await getDoc(docRef);
+    // console.log(docSnap.exists())
+    // if (docSnap.exists()) {
+    //   console.log(docSnap.data())
+    //   const { name, guests, confirm } = docSnap.data();
+    //   setNameConf(name);
+    //   setGuestConf(guests);
+    //   setConfirmed(confirm);
+    // } else {
+    //   return;
+    // }
   };
+console.log(testeandp)
+useEffect(() => {
   getInfo();
+}, [])
+
 
   const updateConfirm = () => {
     db.collection("guests").doc(guest).update({ confirm: true });
-    toast.success("Haz confirmado ir a la boda de Mariana y Carlos! 🐈‍⬛ 🐈", {
+    toast.success("Haz confirmado ir a los Xvs de Kimberly🍾", {
       duration: 5000,
       position: "top-center",
     });
