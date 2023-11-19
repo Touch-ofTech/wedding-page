@@ -22,6 +22,11 @@ jobs:
         with:
           node-version: 16
 
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: ${{ env.TERRAFORM_VERSION }}
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -34,11 +39,11 @@ jobs:
           npm ci
           npm run build
 
-      - name: Upload Frontend to S3
-        working-directory: ${{ env.FRONTEND_DIRECTORY }}
+      - name: Deploy Infrastructure
+        working-directory: terraform
         run: |
-          aws s3 cp dist/ s3://miboda.party/ --recursive
+          terraform init
 
-      - name: Outputs
-        run: |
-          echo "Frontend URL: http://miboda.party.s3-website-us-west-2.amazonaws.com/"
+          terraform plan -var-file environments/prod.tfvars
+
+          terraform apply -var-file environments/prod.tfvars -auto-approve

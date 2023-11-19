@@ -1,0 +1,5 @@
+aws_region     = "us-east-1"
+cluster_name   = "mievento-party"
+domain_name    = "mievento.party"
+certificate_id = "fb614d98-4977-4953-8c9a-8ebc2e2b15b0"
+environment    = "prod"
