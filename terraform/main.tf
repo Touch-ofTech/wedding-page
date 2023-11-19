@@ -110,7 +110,7 @@ resource "aws_cloudfront_distribution" "website_cloudfront_distribution" {
   default_root_object = "index.html"
 
   aliases = [
-    var.domain_name,
+    "www.${var.domain_name}",
   ]
 
   custom_error_response {
