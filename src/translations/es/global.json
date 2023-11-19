@@ -1,0 +1,32 @@
+{
+  "message": {
+    "primary": "Amar es encontrar en la felicidad del otro, la propia felicidad, Acompáñanos a nuestra boda civil.",
+    "party": "Fiesta",
+    "left": "Faltan",
+    "days": "Días",
+    "direction": "San Diego 2070, Residencial Santa María, 28018 Colima, Col.",
+    "takeme": "Llévame",
+    "hours": "Horas",
+    "minutes": "Minutos",
+    "seconds": "Segundos",
+    "month": "Mayo",
+    "confirm": "Confirma tu asistencia",
+    "event": "Evento sin niños.",
+    "name": "Nombre Completo",
+    "email": "Email",
+    "guest": "Invitados Confirmados",
+    "name_guest": "Nombre Invitado",
+    "submit": "Confirmar",
+    "dedicate": "Dedica un mensaje",
+    "message_success": "Haz confirmado ir a la boda de Mariana y Carlos! ",
+    "recomendations": "Recomendaciones",
+    "posible": "Es posible hospedarse en el lugar de la fiesta",
+    "reservation_one": "Hemos reservado {{count}} lugar en su honor.",
+    "reservation_other": "Hemos reservado {{count}} lugares en su honor.",
+    "limit": "Limete de confirmacion 15/11/2022",
+    "no-guest": "Favor de utilizar link de invitación",
+    "confirmation": "Ya has confirmado asistencia",
+    "code": "Código de Vestimenta",
+    "code-text": "Formal"
+  }
+}

@@ -15,18 +15,20 @@ a {
 }
 
 main {
-  section {
-    width: 100%;
-    background-color: #e1e0e0;
-    position: relative;
-    scroll-snap-type: y mandatory;
-    scrollbar-width: none; //for firefox
-
-    // transition: 5ms all ease-out;
-    &::-webkit-scrollbar {
-      display: none; //other webBrowsers
-    }
-  }
+  // padding: 0;
+  // section {
+  //   width: 100%;
+  //   background-color: #e1e0e0;
+  //   position: relative;
+  //   scroll-snap-type: y mandatory;
+  //   scrollbar-width: none; //for firefox
+  //   // transition: 5ms all ease-out;
+  //   &::-webkit-scrollbar {
+  //     display: none; //other webBrowsers
+  //   }
+  // }
+  padding-bottom: 100px;
+  background: #fcf9f7;
 }
 
 .button-music {

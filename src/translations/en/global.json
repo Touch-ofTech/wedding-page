@@ -1,0 +1,31 @@
+{
+  "message": {
+    "primary": "To love is to find in the happiness of the other, one's own happiness.",
+    "party": "Party",
+    "left": "Left",
+    "days": "Days",
+    "direction": "Terraza Santa Julia San Diego 2070, Residencial Santa María, 28018 Colima, Col.",
+    "takeme": "Take me",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds",
+    "month": "December",
+    "confirm": "Confirm your attendance",
+    "event": "Event without children.",
+    "name": "Full Name",
+    "email": "Email",
+    "guest": "Confirmed Guests",
+    "name_guest": "Guest Name",
+    "submit": "Confirm",
+    "dedicate": "Dedicate a message",
+    "recomendations": "Recommendations",
+    "posible": "It is possible to stay at the party venue",
+    "reservation_one": "We have reserved {{count}} place in your honor.",
+    "reservation_other": "We have reserved {{count}} places in your honor.",
+    "limit": "Confirmation limit 15/11/2022",
+    "no-guest": "Please use invitation link",
+    "confirmation": "You have already confirmed attendance",
+    "code": "Dress Code",
+    "code-text": "Formal, Women not White *"
+  }
+}

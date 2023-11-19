@@ -1,119 +1,114 @@
-import { useRef, useState } from "react";
-import { optionsItems } from "../../utils/data";
-import { addDoc, collection } from "firebase/firestore";
-
-import "./Form.scss";
-import db from "../../firebase";
-import toast from "react-hot-toast";
+import { useState } from 'react';
+import { addDoc, collection } from 'firebase/firestore';
+import db from '../../firebase';
+import toast from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
+import './Form.scss';
 
 export const Form = () => {
+  const [t, i18n] = useTranslation('global');
+
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    numberGuests: "",
-    guesstOne: "",
-    guesstTwo: "",
-    dedication: "",
+    nombre: '',
+    invitados: '',
+    confirmado: true,
   });
 
-  // Add a new document with a generated id.
+  const [confirmed, setConfirmed] = useState(false);
 
-  const handleChange = (e: any) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const email = useRef() as React.MutableRefObject<HTMLFormElement>;
-
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
-    toast.success("Haz confirmado ir a la boda de Mariana y Carlos! 🐈‍⬛ 🐈", {
-      duration: 5000,
-      position: "top-center",
+  const onchange = (e: any) => {
+    setFormData((pre) => {
+      return {
+        ...pre,
+        [e.target.name]:
+          e.target.name === 'confirmado'
+            ? !formData.confirmado
+            : e.target.value,
+      };
     });
-
-    const docRef = await addDoc(collection(db, "invitations"), { formData });
-    email.current.reset();
-    setFormData({ ...formData, numberGuests: "" });
   };
+
+  const updateConfirm = async () => {
+    try {
+      const docRef = await addDoc(collection(db, 'bodaIsaura'), {
+        nombre: formData.nombre,
+        invitados: formData.confirmado ? formData.invitados : 0,
+        confirmado: formData.confirmado,
+      });
+
+      toast.success(
+        `${
+          formData.confirmado
+            ? 'Haz confirmado ir a la boda de Isaura & Alfonso! ♥️'
+            : 'Gracias por tu respuesta.'
+        }`,
+        {
+          duration: 5000,
+          position: 'top-center',
+        }
+      );
+    } catch (e) {
+      console.error('Error adding document: ', e);
+    }
+  };
+
   return (
     <section className="form-container" id="form">
       <div className="card-form-container">
-        <h1 className="form-header">Confirma tu asistencia</h1>
-        <span className="error-text">Evento sin niños.*</span>
-        <form
-          ref={email}
-          onSubmit={handleSubmit}
-          action=""
-          className="form-container-inputs"
+        <div className="header--form-container">
+          <h1 className="form-header">{t('message.confirm')}</h1>
+        </div>
+        <div className="form__confirmation--inputs">
+          <label htmlFor="" className="form__input--container">
+            Nombre Invitado
+            <input
+              className="textbox"
+              type="text"
+              placeholder="Ingresar Nombre.."
+              name="nombre"
+              onChange={(e) => onchange(e)}
+              value={formData.nombre}
+            />
+          </label>
+          <label htmlFor="" className="form__input--container">
+            Acompañantes
+            <input
+              className="textbox"
+              type="number"
+              placeholder="Ingresar Numero.."
+              name="invitados"
+              disabled={!formData.confirmado}
+              onChange={(e) => onchange(e)}
+              value={formData.invitados}
+            />
+          </label>
+          <label htmlFor="" className="form__input--container check">
+            No asistiré
+            <input
+              className="form__box-check"
+              type="checkbox"
+              placeholder="Ingresar Numero.."
+              name="confirmado"
+              onChange={(e) => onchange(e)}
+              checked={!formData.confirmado}
+              // @ts-ignore
+              value={formData.confirmado}
+            />
+          </label>
+        </div>
+
+        <button
+          type="submit"
+          className="confirm-button"
+          onClick={updateConfirm}
+          disabled={
+            formData.confirmado
+              ? formData.nombre.length === 0 || formData.invitados.length === 0
+              : formData.nombre === ''
+          }
         >
-          <input
-            className="form-input"
-            type="text"
-            name="name"
-            placeholder="Nombre Completo"
-            required
-            onChange={handleChange}
-          />
-          <input
-            className="form-input"
-            type="email"
-            name="email"
-            placeholder="Email"
-            required
-            onChange={handleChange}
-          />
-          <select
-            value={formData.numberGuests}
-            className="form-input"
-            placeholder="Invitados"
-            id="select"
-            name="numberGuests"
-            onChange={handleChange}
-          >
-            <option value="0">Invitados Confirmados</option>
-            {optionsItems.map((item) => (
-              <option key={item.id} value={item.value}>
-                {item.label}
-              </option>
-            ))}
-          </select>
-          <input
-            className="form-input"
-            type="text"
-            placeholder="Nombre Invitado"
-            name="guesstOne"
-            onChange={handleChange}
-            disabled={
-              formData.numberGuests === "2" || formData.numberGuests === "3"
-                ? false
-                : true
-            }
-            required={
-              formData.numberGuests === "2" || formData.numberGuests === "3"
-                ? true
-                : false
-            }
-          />
-          <input
-            className="form-input"
-            type="text"
-            name="guesstTwo"
-            onChange={handleChange}
-            placeholder="Nombre Invitado"
-            disabled={formData.numberGuests === "3" ? false : true}
-            required={formData.numberGuests === "3" ? true : false}
-          />
-          <textarea
-            className="form-input"
-            id="text-area"
-            name="dedication"
-            placeholder="Dedica un mensaje"
-            onChange={handleChange}
-          />
-          <button type="submit" className="confirm-button">
-            Confirmar
-          </button>
-        </form>
+          {confirmed ? t('message.submit') : t('message.submit')}
+        </button>
       </div>
     </section>
   );
