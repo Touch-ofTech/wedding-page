@@ -14,7 +14,7 @@ export const Dress = () => {
         </div>
         <div className="header--form-container">
           <h1 className="dress-header">Tipo de Regalo</h1>
-          <span className="card-text">Libre</span>
+          <span className="card-text">Libre - Sobre con dinero</span>
         </div>
         {/* <div className="bottom-container">
           <img src={dress} alt="dress" className="dress-img" />

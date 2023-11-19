@@ -6,8 +6,8 @@ import useAudio from 'beautiful-react-hooks/useAudio';
 import arco from './assets/arco4.mp3';
 import { Dress } from './sections/dress/Dress';
 import { Confirmation } from './sections/confirmation/Confirmation';
+import { Footer } from './sections/footer/Footer';
 import './App.scss';
-import { useEffect } from 'react';
 
 function App() {
   const [state, controls] = useAudio(arco, { autoPlay: true });
@@ -44,15 +44,7 @@ function App() {
       <Middle />
       <Confirmation />
       <Dress />
-      {/* {useMemo(
-        () => (
-          <Form />
-        ),
-        []
-      )} */}
-      {/* <footer className="footer">
-        Touch of tech 
-      </footer> */}
+      <Footer />
     </main>
   );
 }
