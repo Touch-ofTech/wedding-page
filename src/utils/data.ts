@@ -2,6 +2,9 @@ import liverpool from "../assets/liverpool.jpeg";
 import banamex from "../assets/banamex.jpeg";
 import hospedaje from "../assets/hospedaje.jpeg";
 import { CardInt } from "../interfaces";
+import instagram from '../assets/instagram.svg'
+import facebook from '../assets/facebook.svg'
+import linkTree from '../assets/linkTree.svg'
 
 export const cardItems: CardInt[] = [
   {
@@ -52,3 +55,22 @@ export const optionsItems = [
     value: 3,
   },
 ];
+
+
+export const socials = [
+  {
+    id:'instagram',
+    url: 'https://www.instagram.com/touchof.tech/',
+    icon : instagram
+  },
+  {
+    id:'facebook',
+    url: 'https://www.facebook.com/touchhoftech',
+    icon : facebook
+  },
+  {
+    id:'linkTree',
+    url: 'https://links.touchof.tech/',
+    icon : linkTree
+  },
+]

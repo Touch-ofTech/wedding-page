@@ -3,9 +3,15 @@
   width: 100vw;
   height: 100vh;
   margin-bottom: 40px;
-  background-image: url('https://images.pexels.com/photos/1128782/pexels-photo-1128782.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+  // background-image: url('https://images.pexels.com/photos/3371094/pexels-photo-3371094.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+  // background-image: url('https://images.pexels.com/photos/1793037/pexels-photo-1793037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+  background-image: url('https://images.pexels.com/photos/10039983/pexels-photo-10039983.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+  // background-image: url('https://images.pexels.com/photos/4110012/pexels-photo-4110012.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+  // background-image: url('https://images.pexels.com/photos/226737/pexels-photo-226737.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+  // background-image: url('https://images.pexels.com/photos/1164985/pexels-photo-1164985.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
+  // background-position: 0%;
 
   @media (max-width: 430px) {
     margin-bottom: 0;
