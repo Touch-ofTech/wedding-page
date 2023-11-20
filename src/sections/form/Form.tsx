@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { addDoc, collection } from 'firebase/firestore';
-import {db} from '../../firebase';
+import { db } from '../../firebase';
 import toast from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
 import './Form.scss';
@@ -30,6 +30,7 @@ export const Form = () => {
 
   const updateConfirm = async () => {
     try {
+      // @ts-ignore
       const docRef = await addDoc(collection(db, 'kimberly'), {
         nombre: formData.nombre,
         invitados: formData.confirmado ? formData.invitados : 0,
