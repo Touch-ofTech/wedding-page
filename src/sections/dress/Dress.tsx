@@ -14,9 +14,8 @@ export const Dress = () => {
         </div>
         <div className="header--form-container">
           <h1 className="dress-header">Tipo de Regalo</h1>
-          <span className="card-text">
-            Si gustas darme un presente 🎁, te lo agradecería. Que sea en
-            efectivo. Al entrar, estará un baúl y sobres ✉️.
+          <span className="card-text">Que sea
+            efectivo 🎁. Al entrar, estará un baúl con sobres ✉️.
           </span>
           <span className="card-text">Lo más importante es tu presencia.</span>
         </div>
