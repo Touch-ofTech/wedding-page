@@ -1,15 +1,9 @@
-import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useCountDown } from '../../hooks/useCountDown';
-// import el from '../../assets/el.jpg'
-// import ella from ''
 import './Middle.scss';
-import {db} from '../../firebase';
 
 export const Middle = () => {
   const [t, i18n] = useTranslation('global');
-
-
 
   const { secondsState, daysState, hoursState, minutesState } = useCountDown();
   return (
@@ -50,6 +44,18 @@ export const Middle = () => {
           className="middle-top-profile-img"
         />
       </div> */}
+      <div className="middle-middle-container">
+        <h1 className="middle-middle-header">{t('message.parents')}</h1>
+        <span className="middle-middle-location">
+          Héctor Manuel Padilla Hernández y María de Jesús Vera Rodríguez
+        </span>
+      </div>
+      <div className="middle-middle-container">
+        <h1 className="middle-middle-header">{t('message.godparents')}</h1>
+        <span className="middle-middle-location">
+          José Eleazar Padilla Hernández y Olga Yaneth García Ramos
+        </span>
+      </div>
       <div className="middle-middle-container">
         <h1 className="middle-middle-header">{t('message.ceremony')}</h1>
         <span className="middle-middle-location">
