@@ -79,15 +79,15 @@ export const Middle = () => {
         </span> */}
         <div className="middle-middle-bottom-container">
           <span className="middle-middle-bottom-text">7:30 pm</span>
-          {/* <a
-            href="https://goo.gl/maps/8twwiu7y39Yob1Vc7"
+          <a
+            href="https://maps.app.goo.gl/vSBMgk5oeXNdjFBB7"
             target="_blank"
             className="middle-link"
           >
             <span className="middle-middle-bottom-link">
               {t('message.takeme')}
             </span>
-          </a> */}
+          </a>
         </div>
         <div className="middle-count-container">
           <span className="middle-count-header">{t('message.left')}</span>
