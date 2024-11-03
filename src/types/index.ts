@@ -5,3 +5,10 @@ export interface Guest {
     name: string;
     phone: number;
   }
+
+  export type monthsTranslations = {
+    en:string;
+    es:string 
+  }
+  
+  

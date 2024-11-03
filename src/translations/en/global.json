@@ -14,7 +14,7 @@
     "hours": "Hours",
     "minutes": "Minutes",
     "seconds": "Seconds",
-    "month": "January",
+    "date": "{{month}}, {{date}}",
     "confirm": "Confirm your attendance",
     "event": "Event without children.",
     "name": "Full Name",
