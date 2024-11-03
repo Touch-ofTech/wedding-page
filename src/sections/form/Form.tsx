@@ -4,13 +4,15 @@ import { db } from '../../firebase';
 import toast from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
 import './Form.scss';
+import { update, ref, set } from 'firebase/database';
+import { CardContainer } from '../../components/cardContainer/CardContainer';
 
 export const Form = () => {
   const [t, i18n] = useTranslation('global');
 
   const [formData, setFormData] = useState({
     nombre: '',
-    invitados: '',
+    invitados: '0',
     confirmado: true,
   });
 
@@ -29,25 +31,43 @@ export const Form = () => {
   };
 
   const updateConfirm = async () => {
+    const userId = `${formData.nombre}_${Date.now()}_${
+      formData.invitados
+    }`.replace(/ +/g, '_');
     try {
-      // @ts-ignore
-      const docRef = await addDoc(collection(db, 'kimberly'), {
-        nombre: formData.nombre,
+      set(ref(db, `confirmation_boda_danny_elias/${userId}`), {
+        ...formData,
         invitados: formData.confirmado ? formData.invitados : 0,
-        confirmado: formData.confirmado,
       });
-
       toast.success(
         `${
           formData.confirmado
-            ? 'Haz confirmado ir a la boda de Isaura & Alfonso! ♥️'
-            : 'Gracias por tu respuesta.'
+            ? 'Haz confirmado ir a la boda de Danny y Elías'
+            : 'Haz confirmado que no iras a la boda de Danny y Elías'
         }`,
         {
           duration: 5000,
           position: 'top-center',
         }
       );
+      // @ts-ignore
+      // const docRef = await addDoc(collection(db, 'PruebaToday'), {
+      //   nombre: formData.nombre,
+      //   invitados: formData.confirmado ? formData.invitados : 0,
+      //   confirmado: formData.confirmado,
+      // });
+
+      //   toast.success(
+      //     `${
+      //       formData.confirmado
+      //         ? 'Haz confirmado ir a la boda de Isaura & Alfonso! ♥️'
+      //         : 'Gracias por tu respuesta.'
+      //     }`,
+      //     {
+      //       duration: 5000,
+      //       position: 'top-center',
+      //     }
+      //   );
     } catch (e) {
       console.error('Error adding document: ', e);
     }
@@ -55,9 +75,10 @@ export const Form = () => {
 
   return (
     <section className="form-container" id="form">
-      <div className="card-form-container">
+      <CardContainer>
         <div className="header--form-container">
           <h1 className="form-header">{t('message.confirm')}</h1>
+          <span className="error-text">{t('message.event')}</span>
         </div>
         <div className="form__confirmation--inputs">
           <label htmlFor="" className="form__input--container">
@@ -110,7 +131,7 @@ export const Form = () => {
         >
           {confirmed ? t('message.submit') : t('message.submit')}
         </button>
-      </div>
+      </CardContainer>
     </section>
   );
 };

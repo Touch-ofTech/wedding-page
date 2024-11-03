@@ -5,8 +5,9 @@ import { Middle } from './sections/middle/Middle';
 import { Toaster } from 'react-hot-toast';
 import { AiFillSound, AiOutlinePause } from 'react-icons/ai';
 import { Dress } from './sections/dress/Dress';
-import { Confirmation } from './sections/confirmation/Confirmation';
 import { Footer } from './sections/footer/Footer';
+import { Form } from './sections/form/Form';
+import Recomendations from './sections/recomendations/Recomendations';
 import './App.scss';
 
 function App() {
@@ -32,8 +33,10 @@ function App() {
       <Toaster />
       <Header />
       <Middle />
-      <Confirmation />
+      {/* <Confirmation /> */}
+      <Form />
       <Dress />
+      <Recomendations/>
       <Footer />
     </main>
   );

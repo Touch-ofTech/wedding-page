@@ -50,7 +50,7 @@
       }
 
       .middle-top-middle-header {
-        font-family: "The Nautigal", cursive;
+        font-family: 'The Nautigal', cursive;
         font-size: 60px;
         font-weight: 500;
         line-height: 160%;
@@ -61,7 +61,7 @@
       }
 
       .middle-top-middle-description {
-        font-family: "Montaga";
+        font-family: 'Montaga';
         font-style: normal;
         font-weight: 400;
         font-size: 18px;
@@ -85,14 +85,14 @@
     margin-top: 40px;
 
     .middle-middle-header {
-      font-family: "The Nautigal", cursive;
+      font-family: 'The Nautigal', cursive;
       font-size: 34px;
       font-weight: 500;
       line-height: 160%;
     }
 
     .middle-middle-location {
-      font-family: "Montaga";
+      font-family: 'Montaga';
       font-style: normal;
       font-weight: 400;
       font-size: 18px;
@@ -103,7 +103,7 @@
     }
 
     .middle-middle-address {
-      font-family: "Montaga";
+      font-family: 'Montaga';
       font-style: normal;
       font-weight: 100;
       font-size: 18px;
@@ -123,13 +123,13 @@
 
       .middle-middle-bottom-text {
         padding: 8px;
-        // border: 1px solid #c6754d;
-        border: 1px solid #FF3FA4;
+        border: 1px solid #c6754d;
+        // border: 1px solid #ff3fa4;
         border-radius: 24px;
         font-size: 24px;
-        color: #FF3FA4;
-        // color: #c6754d;
-        font-family: "Montaga";
+        // color: #ff3fa4;
+        color: #c6754d;
+        font-family: 'Montaga';
         font-style: normal;
         font-weight: 100;
         width: 120px;
@@ -138,10 +138,10 @@
 
       .middle-link {
         text-decoration: none;
-        background: #FF3FA4;
-        // background: #c6754d;
+        // background: #ff3fa4;
+        background: #c6754d;
         color: whitesmoke;
-        font-family: "Montaga";
+        font-family: 'Montaga';
         font-style: normal;
         font-weight: 100;
         font-size: 18px;
@@ -162,7 +162,8 @@
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     width: 450px;
     padding: 10px;
-    border: 1px solid #FF3FA4;
+    // border: 1px solid #ff3fa4;
+    border: 1px solid #c6754d;
     margin-top: 60px;
     position: relative;
     z-index: 2;
@@ -181,7 +182,7 @@
       top: -20px;
       text-align: center;
       left: 150px;
-      font-family: "The Nautigal", cursive;
+      font-family: 'The Nautigal', cursive;
       font-size: 34px;
       font-weight: 100;
       line-height: 100%;
@@ -200,20 +201,20 @@
       flex-direction: column;
 
       .middle-count-text {
-        font-family: "Montaga";
+        font-family: 'Montaga';
         font-style: normal;
         font-weight: 400;
         font-size: 30px;
         line-height: 160%;
-        // color: #c6754d;
-        color: #FF3FA4;
+        color: #c6754d;
+        // color: #ff3fa4;
         opacity: 0.7;
         @media (max-width: 430px) {
           font-size: 15px;
         }
       }
       .middle-count-subtext {
-        font-family: "Montaga";
+        font-family: 'Montaga';
         font-style: normal;
         font-weight: 100;
         font-size: 18px;

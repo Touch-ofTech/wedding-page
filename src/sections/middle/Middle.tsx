@@ -5,12 +5,12 @@ import './Middle.scss';
 export const Middle = () => {
   const [t, i18n] = useTranslation('global');
 
-  const { secondsState, daysState, hoursState, minutesState } = useCountDown();
+  const { secondsState, daysState, hoursState, minutesState } = useCountDown("jan 25 2025 18:00:00");
   return (
     <section className="middle-container" id="middle">
       <div className="middle-top-container">
         <img
-          src="https://i.ibb.co/Sd3GXsb/f1f7d213-e4a0-4a48-b9db-87f04c72051e.jpg"
+          src="https://i.ibb.co/94Ygw0q/daniela-elias19.jpg"
           alt="novia"
           className="middle-top-profile-img"
         />
@@ -47,27 +47,27 @@ export const Middle = () => {
       <div className="middle-middle-container">
         <h1 className="middle-middle-header">{t('message.parents')}</h1>
         <span className="middle-middle-location">
-          Héctor Manuel Padilla Hernández y María de Jesús Vera Rodríguez
+         Nombre de los Padres
         </span>
       </div>
       <div className="middle-middle-container">
         <h1 className="middle-middle-header">{t('message.godparents')}</h1>
         <span className="middle-middle-location">
-          José Eleazar Padilla Hernández y Olga Yaneth García Ramos
+        Nombre de los Padrinos
         </span>
       </div>
       <div className="middle-middle-container">
         <h1 className="middle-middle-header">{t('message.ceremony')}</h1>
-        <span className="middle-middle-location">
-          Templo de nuestra señora de la Candelaria en el Trapiche
-        </span>
+        {/* <span className="middle-middle-location">
+          Templo de nuestra señora de la Prueba
+        </span> */}
         <span className="middle-middle-address">
           {t('message.direction')}📍
         </span>
         <div className="middle-middle-bottom-container">
-          <span className="middle-middle-bottom-text">6:00 pm</span>
+          <span className="middle-middle-bottom-text">05:30 pm</span>
           <a
-            href="https://maps.app.goo.gl/4QdXBtDJPHERgSAw9"
+            href="https://www.google.com/maps/place/Dos+Vistas+Jard%C3%ADn/@19.1999837,-103.7229745,15z/data=!4m2!3m1!1s0x0:0x14a4dceb36ab7767?sa=X&ved=1t:2428&ictx=111"
             target="_blank"
             className="middle-link"
           >
@@ -77,16 +77,16 @@ export const Middle = () => {
           </a>
         </div>
         <h1 className="middle-middle-header">{t('message.party')}</h1>
-        <span className="middle-middle-location">
-          Rancho los Padilla en el Manrique
-        </span>
-        {/* <span className="middle-middle-address">
-          {t('message.direction')}📍
+        {/* <span className="middle-middle-location">
+        Dos Vistas Jardín
         </span> */}
+        <span className="middle-middle-address">
+          {t('message.direction')}📍
+        </span>
         <div className="middle-middle-bottom-container">
-          <span className="middle-middle-bottom-text">7:30 pm</span>
+          <span className="middle-middle-bottom-text">7:00 pm</span>
           <a
-            href="https://maps.app.goo.gl/vSBMgk5oeXNdjFBB7"
+            href="https://www.google.com/maps/place/Dos+Vistas+Jard%C3%ADn/@19.1999837,-103.7229745,15z/data=!4m2!3m1!1s0x0:0x14a4dceb36ab7767?sa=X&ved=1t:2428&ictx=111"
             target="_blank"
             className="middle-link"
           >

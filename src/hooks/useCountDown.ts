@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-export const useCountDown = () => {
+export const useCountDown = (date: string) => {
   const [daysState, setDays] = useState(0);
   const [hoursState, setHours] = useState(0);
   const [minutesState, setMinutes] = useState(0);
   const [secondsState, setSeconds] = useState(0);
   const [counter, setCounter] = useState(0);
   const countdown = () => {
-    const now:any = new Date();
-    const endDate = new Date("dec 17 2023 18:00:00").getTime();
+    const now: any = new Date();
+    const endDate = new Date(date).getTime();
     const difference = endDate - now;
     const seconds = 1000;
     const minutes = seconds * 60;
@@ -24,12 +24,10 @@ export const useCountDown = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCounter(counter + 1);
-        countdown();
+      countdown();
     }, 1000);
     return () => clearInterval(interval);
-    
   }, [counter]);
-
 
   return {
     daysState,
@@ -37,5 +35,5 @@ export const useCountDown = () => {
     minutesState,
     secondsState,
     counter,
-  }
+  };
 };

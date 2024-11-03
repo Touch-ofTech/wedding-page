@@ -6,14 +6,15 @@
   flex-direction: column;
   position: relative;
   width: 398px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 8px;
   transition: ease-in-out 0.3s;
   align-self: center;
   justify-self: center;
   @media (max-width: 768px) {
     width: 300px;
     height: 390px;
-    padding: 24px;
+    // padding: 24px;
     margin-bottom: 15px;
   }
   @media (max-width: 430px) {
@@ -21,7 +22,7 @@
   }
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.01);
   }
 
   .img-card {
@@ -30,9 +31,10 @@
     position: absolute;
     object-fit: cover;
     top: -1px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 
     @media (max-width: 768px) {
-      padding: 5px;
       width: 300px;
       height: 200px;
       grid-template-columns: repeat(4, 1fr);
@@ -41,7 +43,7 @@
 
   .card-header {
     margin-top: 250px;
-    font-family: "Montaga", serif;
+    font-family: 'Montaga', serif;
     font-style: normal;
     font-weight: 100;
     font-size: 18px;
@@ -58,11 +60,12 @@
       opacity: 0.7;
     }
   }
+
   .button-card {
     text-decoration: none;
     background: #c6754d;
     color: whitesmoke;
-    font-family: "Montaga";
+    font-family: 'Montaga';
     font-style: normal;
     font-weight: 100;
     font-size: 18px;
