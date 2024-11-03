@@ -24,16 +24,6 @@ function App() {
     <main>
       <button
         className="button-music"
-        style={{
-          position: 'fixed',
-          background: 'transparent',
-          border: 'none',
-          fontSize: '24px',
-          top: '15px',
-          right: '15px',
-          zIndex: '20',
-          cursor: 'pointer',
-        }}
         id="audio"
         onClick={() => handleSound(state)}
       >

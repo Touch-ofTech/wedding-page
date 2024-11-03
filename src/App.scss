@@ -39,13 +39,21 @@ main {
   align-self: center;
   justify-content: center;
   margin-left: 80% !important;
+  position: fixed;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  top: 15px;
+  right: 15px;
+  z-index: 20;
+  cursor: pointer;
 }
 
-.footer{
+.footer {
   background: #fff;
   width: 100vw;
   height: 120px;
   margin-top: 40px;
   padding: 80px;
-  font-family: "Montaga";
+  font-family: 'Montaga';
 }
