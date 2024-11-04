@@ -1,6 +1,7 @@
 import { Card } from '../../components/card/Card';
 import { useTranslation } from 'react-i18next';
 import { Container } from '../../components';
+import { Slide } from 'react-awesome-reveal';
 import './Recomendations.scss';
 
 const items = [
@@ -26,16 +27,17 @@ const items = [
 export const Recomendations = () => {
   const { t } = useTranslation('global');
   return (
-    <Container id='recomendations'>
-      <div className="grid_container">
-        <h1 className="header">{t('message.header_recommendations')}</h1>
-        <div className="grid_card_container">
-          {items.map((item) => (
-            <Card card={item} />
-          ))}
+    <Container id="recomendations">
+      <Slide triggerOnce>
+        <div className="grid_container">
+          <h1 className="header">{t('message.header_recommendations')}</h1>
+          <div className="grid_card_container">
+            {items.map((item) => (
+              <Card card={item} />
+            ))}
+          </div>
         </div>
-      </div>
+      </Slide>
     </Container>
   );
 };
-
