@@ -147,4 +147,6 @@ export const EVENT = {
   partyTime: '7:00 pm',
   dress: 'No vestidos verdes ni blancos',
   present: 'Transferencia o Sobres 🎁.',
+  date: 'jan 25 2025 17:30:00',
+  month: 0,
 };
