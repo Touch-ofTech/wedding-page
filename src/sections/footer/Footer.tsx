@@ -1,16 +1,15 @@
-import { useTranslation } from 'react-i18next';
 import tot from '../../assets/TouchofTech.n.png';
-import './Footer.scss';
 import { socials } from '../../utils/data';
+import './Footer.scss';
 
 export const Footer = () => {
-  const [t, i18n] = useTranslation('global');
+  const year = new Date().getFullYear();
 
   return (
     <section className="footer-container">
       <div className="logo-container">
         <img src={tot} alt="logo" className="logo" />
-        <span> &copy; 2023</span>
+        <span> &copy; {year}</span>
       </div>
 
       <div className="love">

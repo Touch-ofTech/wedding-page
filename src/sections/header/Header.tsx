@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import arrow from '../../assets/icon-arrow-light.svg';
-import { MONTHS } from '../../utils/data';
+import { EVENT, MONTHS } from '../../utils/data';
 import { monthsTranslations } from '../../types';
 import './Header.scss';
 
@@ -13,7 +13,10 @@ export const Header = () => {
         <h1 className="header-title">{t('message.header_title')}</h1>
         <h3 className="header-subtitle">
           {t('message.date', {
-            month: MONTHS[11][language as keyof monthsTranslations],
+            month:
+              MONTHS[EVENT.month as keyof typeof MONTHS][
+                language as keyof monthsTranslations
+              ],
             date: '25,2025.',
           })}
         </h3>

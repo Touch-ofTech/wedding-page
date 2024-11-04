@@ -1,6 +1,6 @@
 {
   "message": {
-    "header_title": "Danny y Elías",
+    "header_title": "Danny & Elías",
     "header_recommendations": "Recomendaciones",
     "primary": "Porque juntos, somos el mejor destino. 💫❤️",
     "party": "Fiesta",
@@ -31,6 +31,16 @@
     "no-guest": "Favor de utilizar el link de invitación",
     "confirmation": "Ya has confirmado asistencia",
     "code": "Código de Vestimenta",
-    "code-text": "Formal"
+    "code-text": "Formal",
+    "dress_present": "Lo más importante es tu presencia.",
+    "dress_present_type": "Tipo de Regalo",
+    "confirmation_message": "Haz confirmado ir a la boda de {{couple}}! ♥️",
+    "confirmation_message_reject": "Gracias por tu respuesta.",
+    "confirmation_error_message": "Favor de agregar invitados",
+    "form_name_label": "Nombre Invitado",
+    "form_name_placeholder": "Ingresar Nombre...",
+    "form_guest_label": "Acompañantes",
+    "form_guest_placeholder": "Ingresar Numero de Acompañantes...",
+    "form_not_attending": " No asistiré"
   }
 }

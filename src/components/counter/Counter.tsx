@@ -1,13 +1,14 @@
 import React from 'react';
 import { useCountDown } from '../../hooks/useCountDown';
 import { useTranslation } from 'react-i18next';
+import { EVENT } from '../../utils/data';
 import './Counter.scss'
 
 export const Counter = () => {
   const [t] = useTranslation('global');
 
   const { secondsState, daysState, hoursState, minutesState } = useCountDown(
-    'jan 25 2025 18:00:00'
+    EVENT.date
   );
   return (
     <div className="counter">

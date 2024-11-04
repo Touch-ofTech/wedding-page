@@ -1,17 +1,22 @@
 import useAudio from 'beautiful-react-hooks/useAudio';
 import arco from './assets/arco4.mp3';
-import { Header } from './sections/header/Header';
-import { Middle } from './sections/middle/Middle';
 import { Toaster } from 'react-hot-toast';
 import { AiFillSound, AiOutlinePause } from 'react-icons/ai';
-import { Dress } from './sections/dress/Dress';
-import { Footer } from './sections/footer/Footer';
-import { Form } from './sections/form/Form';
-import Recomendations from './sections/recomendations/Recomendations';
+import {
+  Dress,
+  Footer,
+  Form,
+  Header,
+  Middle,
+  Recomendations,
+} from './sections';
 import './App.scss';
 
 function App() {
-  const [state, controls] = useAudio(arco, { autoPlay: true, loop: true });
+  const [state, controls] = useAudio(arco, {
+    autoPlay: true,
+    loop: true,
+  });
 
   const handleSound = (audElemnt: any) => {
     if (audElemnt.isPlaying === false) {
@@ -32,11 +37,13 @@ function App() {
       </button>
       <Toaster />
       <Header />
-      <Middle />
+      <section className="sections">
+        <Middle />
+        <Form />
+        <Dress />
+        <Recomendations />
+      </section>
       {/* <Confirmation /> */}
-      <Form />
-      <Dress />
-      <Recomendations/>
       <Footer />
     </main>
   );

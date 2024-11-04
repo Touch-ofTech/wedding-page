@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Counter } from '../../components';
+import { Container, Counter } from '../../components';
 import { EVENT } from '../../utils/data';
 import './Middle.scss';
 
@@ -7,7 +7,7 @@ export const Middle = () => {
   const [t] = useTranslation('global');
 
   return (
-    <section className="middle-container" id="middle">
+    <Container id="middle">
       <div className="middle-top-container">
         <img
           src="https://i.ibb.co/94Ygw0q/daniela-elias19.jpg"
@@ -30,7 +30,6 @@ export const Middle = () => {
               {parent.name}
             </span>
           ))}
-
         </div>
         <div className="middle-middle-container">
           <h1 className="cursive-header">{t('message.godparents')}</h1>
@@ -84,6 +83,6 @@ export const Middle = () => {
         </div>
         <Counter />
       </div>
-    </section>
+    </Container>
   );
 };
