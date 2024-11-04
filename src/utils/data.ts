@@ -145,4 +145,6 @@ export const EVENT = {
   ],
   ceremonyTime: '05:30 pm',
   partyTime: '7:00 pm',
+  dress: 'No vestidos verdes ni blancos',
+  present: 'Transferencia o Sobres 🎁.',
 };

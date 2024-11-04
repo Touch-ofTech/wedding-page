@@ -5,40 +5,25 @@
   justify-content: center;
   flex-direction: column;
   position: relative;
-  width: 398px;
+  width: 100%;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 8px;
   transition: ease-in-out 0.3s;
   align-self: center;
   justify-self: center;
-  @media (max-width: 768px) {
-    width: 300px;
-    height: 390px;
-    // padding: 24px;
-    margin-bottom: 15px;
-  }
-  @media (max-width: 430px) {
-    margin-bottom: 0;
-  }
 
   &:hover {
     transform: scale(1.01);
   }
 
   .img-card {
-    width: 398px;
-    height: 290px;
+    width: 100%;
+    height: 250px;
     position: absolute;
     object-fit: cover;
     top: -1px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-
-    @media (max-width: 768px) {
-      width: 300px;
-      height: 200px;
-      grid-template-columns: repeat(4, 1fr);
-    }
   }
 
   .card-header {

@@ -1,31 +1,26 @@
 import { useTranslation } from 'react-i18next';
-import dress from '../../assets/dress_code.svg';
-import './Dress.scss';
 import { CardContainer } from '../../components/cardContainer/CardContainer';
-import { Card } from '../../components/card/Card';
+import { Container } from '../../components';
+import { EVENT } from '../../utils/data';
+import './Dress.scss';
 
 export const Dress = () => {
-  const [t, i18n] = useTranslation('global');
+  const [t] = useTranslation('global');
 
   return (
-    <div className="dress-code-container">
+    <Container id='dress'>
       <CardContainer>
         <div className="header--form-container">
           <h1 className="dress-header">{t('message.code')}</h1>
           <span className="card-text">{t('message.code-text')}</span>
-          <span className="card-text">No vestidos verdes ni blancos</span>
+          <span className="card-text">{EVENT.dress}</span>
         </div>
         <div className="header--form-container">
-          <h1 className="dress-header">Tipo de Regalo</h1>
-          <span className="card-text">
-          Transferencia y Sobres 🎁.
-          </span>
-          <span className="card-text">Lo más importante es tu presencia.</span>
+          <h1 className="dress-header">{t('message.dress_present_type')}</h1>
+          <span className="card-text">{EVENT.present}</span>
+          <span className="card-text">{t('message.dress_present')}</span>
         </div>
-        {/* <div className="bottom-container">
-          <img src={dress} alt="dress" className="dress-img" />
-          </div> */}
       </CardContainer>
-    </div>
+    </Container>
   );
 };

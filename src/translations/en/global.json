@@ -1,6 +1,6 @@
 {
   "message": {
-    "header_title": "Danny y Elías",
+    "header_title": "Danny & Elías",
     "header_recommendations": "Recommendations",
     "primary": "Because together, we are the perfect destination. 💫❤️",
     "parents": "Parents",
@@ -31,6 +31,15 @@
     "no-guest": "Please use your invitation link",
     "confirmation": "You have already confirmed attendance",
     "code": "Dress Code",
-    "code-text": "Formal"
+    "dress_present": "The most important thing is your presence.",
+    "dress_present_type": "Tipo de Regalo",
+    "confirmation_message": "You have confirmed attendance to the wedding of {{couple}}! ♥️",
+    "confirmation_message_reject": "Thank you for your response.",
+    "confirmation_error_message": "Please add guests",
+    "form_name_label": "Guest Name",
+    "form_name_placeholder": "Enter Name...",
+    "form_guest_label": "Companions",
+    "form_guest_placeholder": "Enter Number of Companions...",
+    "form_not_attending": "I will not attend"
   }
 }
