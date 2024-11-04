@@ -52,7 +52,7 @@
       border: none;
       border-radius: 5px;
       color: #fff;
-      font-style: normal;
+
       font-weight: 400;
       font-size: 18px;
       line-height: 100%;
@@ -70,7 +70,7 @@
       }
       &:hover {
         background: #fcf9f7;
-        color: #c6754d;
+        color: var(--base-color);
       }
       @media (max-width: 430px) {
         max-width: 300px;
@@ -78,7 +78,6 @@
     }
 
     .form-header {
-      font-style: normal;
       font-weight: 400;
       font-size: 24px;
       line-height: 16px;
@@ -97,7 +96,6 @@
       flex-direction: column;
       gap: 24px;
       .form-header-title {
-        font-style: normal;
         font-weight: 400;
         font-size: 24px;
         line-height: 160%;
@@ -108,14 +106,12 @@
         }
       }
       .form-header-guest {
-        font-style: normal;
         font-weight: 400;
         font-size: 34px;
         line-height: 160%;
         opacity: 0.7;
       }
       .form-header-invites {
-        font-style: normal;
         font-weight: 400;
         font-size: 24px;
         line-height: 160%;

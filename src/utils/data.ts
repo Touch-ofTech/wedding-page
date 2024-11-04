@@ -124,3 +124,25 @@ export const MONTHS = {
     es: 'Diciembre',
   },
 };
+
+export const EVENT = {
+  saveTitle: 'Save The Date',
+  parents: [
+    {
+      name: 'Nombre Prueba',
+    },
+    {
+      name: 'Nombre Prueba',
+    },
+  ],
+  godFathers: [
+    {
+      name: 'Nombre Prueba',
+    },
+    {
+      name: 'Nombre Prueba',
+    },
+  ],
+  ceremonyTime: '05:30 pm',
+  partyTime: '7:00 pm',
+};
