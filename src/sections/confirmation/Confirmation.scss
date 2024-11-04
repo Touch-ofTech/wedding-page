@@ -1,215 +1,204 @@
 .form-container {
-    background: #fcf9f7;
+  background: #fcf9f7;
+  width: 100%;
+  padding: 150px 330px;
+  @media (max-width: 1186px) {
+    padding: 250px;
+  }
+
+  @media (max-width: 1186px) {
+    padding: 50px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 10px;
+    height: 100%;
+  }
+
+  .card-form-container {
     width: 100%;
-    padding: 150px 330px;
-    @media (max-width: 1186px) {
-      padding: 250px;
-    }
-  
-    @media (max-width: 1186px) {
-      padding: 50px;
-    }
-  
+    height: 500px;
+    position: relative;
+    background: #fff;
+    padding: 55px 60px;
+    z-index: 5;
+    box-shadow: 0 0 50px 5px rgb(0 0 0 / 5%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+
     @media (max-width: 768px) {
-      padding: 10px;
       height: 100%;
+      padding: 24px;
     }
-  
-    .card-form-container {
+    @media (max-width: 430px) {
+      padding: 30px 24px;
+    }
+    .header--form-container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      align-self: flex-start;
+      gap: 12px;
+    }
+
+    .confirm-button {
       width: 100%;
-      height: 500px;
-      position: relative;
-      background: #fff;
-      padding: 55px 60px;
-      z-index: 5;
-      box-shadow: 0 0 50px 5px rgb(0 0 0 / 5%);
+      height: 50px;
+      // background: #ff3fa4 !important;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 100%;
+      grid-column: 1/3;
+      margin-bottom: 25px;
+      cursor: pointer;
+      max-width: 500px;
+      transition: all 0.3s ease-in-out;
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        &:hover {
+          color: #fff;
+        }
+      }
+      &:hover {
+        background: #fcf9f7;
+        color: var(--base-color);
+      }
+      @media (max-width: 430px) {
+        max-width: 300px;
+      }
+    }
+
+    .form-header {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 16px;
+      color: #0e0804;
+      width: 100%;
+      @media (max-width: 430px) {
+        font-size: 20px;
+        width: 200px;
+      }
+    }
+
+    .form-middle-container {
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      gap: 40px;
-  
-      @media (max-width: 768px) {
-        height: 100%;
-        padding: 24px;
-      }
-      @media (max-width: 430px) {
-        padding: 30px 24px;
-      }
-      .header--form-container {
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        flex-direction: column;
-        align-self: flex-start;
-        gap: 12px;
-      }
-  
-      .confirm-button {
-        width: 100%;
-        height: 50px;
-        background: #FF3FA4 !important;
-        border: none;
-        border-radius: 5px;
-        color: #fff;
-        font-family: "Montaga";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 100%;
-        grid-column: 1/3;
-        margin-bottom: 25px;
-        cursor: pointer;
-        max-width: 500px;
-        transition: all 0.3s ease-in-out;
-        &:disabled {
-          opacity: 0.5;
-          cursor: not-allowed;
-          &:hover {
-            color: #fff;
-          }
-        }
-        &:hover {
-          background: #fcf9f7;
-          color: #c6754d;
-        }
-        @media (max-width: 430px) {
-          max-width: 300px;
-        }
-      }
-  
-      .form-header {
-        font-family: "Montaga";
-        font-style: normal;
+      gap: 24px;
+      .form-header-title {
         font-weight: 400;
         font-size: 24px;
-        line-height: 16px;
-        color: #0e0804;
-        width: 100%;
-        @media (max-width: 430px) {
-          font-size: 20px;
-          width: 200px;
-        }
-      }
-  
-      .form-middle-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        gap: 24px;
-        .form-header-title {
-          font-family: "Montaga";
-          font-style: normal;
-          font-weight: 400;
-          font-size: 24px;
-          line-height: 160%;
-          opacity: 0.7;
-  
-          @media (max-width: 768px) {
-            font-size: 18px;
-          }
-        }
-        .form-header-guest {
-          font-family: "Montaga";
-          font-style: normal;
-          font-weight: 400;
-          font-size: 34px;
-          line-height: 160%;
-          opacity: 0.7;
-        }
-        .form-header-invites {
-          font-family: "Montaga";
-          font-style: normal;
-          font-weight: 400;
-          font-size: 24px;
-          line-height: 160%;
-          opacity: 0.7;
-  
-          // @media (max-width: 1186px) {
-          //   font-size: 18px;
-          //  }
-  
-          //  @media (max-width: 1186px) {
-          //    padding: 50px;
-          //  }
-  
-          @media (max-width: 768px) {
-            font-size: 18px;
-          }
-        }
-      }
-  
-      .error-text {
-        font-family: "Montaga";
-        font-style: italic;
-        font-weight: 100;
-        font-size: 12px;
-        line-height: 100%;
-        color: red;
-      }
-      .form-container-inputs {
-        width: 100%;
-        background: #fff;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-        margin-top: 25px;
-  
-        @media (max-width: 1186px) {
-          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        }
+        line-height: 160%;
+        opacity: 0.7;
+
         @media (max-width: 768px) {
-          grid-template-columns: 2, 1fr;
+          font-size: 18px;
         }
-        @media (max-width: 430px) {
-          grid-template-columns: 1, 1fr;
-        }
-  
-        .form-input {
-          border: 1px solid #eee;
-          padding: 8px 14px;
-          font-size: 16px;
-          font-family: "Montaga";
-          font-style: oblique;
-          font-weight: 200;
-          box-shadow: none;
-          appearance: none;
-          color: #f2c2a9;
-          -webkit-appearance: none;
-          border-radius: 0;
-          outline: none;
-          @media (max-width: 430px) {
-            grid-column: 1/3;
-            max-width: 300px;
-          }
-          &::placeholder {
-            font-weight: 100;
-            color: #d2d0cf;
-          }
-        }
-  
-        #email {
-          grid-column: 1/3;
-          @media (max-width: 1186px) {
-            max-width: 414px;
-          }
-        }
-        #select {
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          appearance: none;
-          color: #d2d0cf; /* Remove default arrow */
-          option {
-            color: #d2d0cf;
-          }
-        }
-        #text-area {
-          resize: none;
-          height: 75px;
-          grid-column: 1/3;
+      }
+      .form-header-guest {
+        font-weight: 400;
+        font-size: 34px;
+        line-height: 160%;
+        opacity: 0.7;
+      }
+      .form-header-invites {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 160%;
+        opacity: 0.7;
+
+        // @media (max-width: 1186px) {
+        //   font-size: 18px;
+        //  }
+
+        //  @media (max-width: 1186px) {
+        //    padding: 50px;
+        //  }
+
+        @media (max-width: 768px) {
+          font-size: 18px;
         }
       }
     }
+
+    .error-text {
+      font-style: italic;
+      font-weight: 100;
+      font-size: 12px;
+      line-height: 100%;
+      color: red;
+    }
+    .form-container-inputs {
+      width: 100%;
+      background: #fff;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 25px;
+
+      @media (max-width: 1186px) {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+      @media (max-width: 768px) {
+        grid-template-columns: 2, 1fr;
+      }
+      @media (max-width: 430px) {
+        grid-template-columns: 1, 1fr;
+      }
+
+      .form-input {
+        border: 1px solid #eee;
+        padding: 8px 14px;
+        font-size: 16px;
+
+        font-style: oblique;
+        font-weight: 200;
+        box-shadow: none;
+        appearance: none;
+        color: #f2c2a9;
+        -webkit-appearance: none;
+        border-radius: 0;
+        outline: none;
+        @media (max-width: 430px) {
+          grid-column: 1/3;
+          max-width: 300px;
+        }
+        &::placeholder {
+          font-weight: 100;
+          color: #d2d0cf;
+        }
+      }
+
+      #email {
+        grid-column: 1/3;
+        @media (max-width: 1186px) {
+          max-width: 414px;
+        }
+      }
+      #select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        color: #d2d0cf; /* Remove default arrow */
+        option {
+          color: #d2d0cf;
+        }
+      }
+      #text-area {
+        resize: none;
+        height: 75px;
+        grid-column: 1/3;
+      }
+    }
   }
-  
+}

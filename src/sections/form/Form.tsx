@@ -1,22 +1,20 @@
 import { useState } from 'react';
-import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../../firebase';
 import toast from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
-import './Form.scss';
-import { update, ref, set } from 'firebase/database';
+import { ref, set } from 'firebase/database';
 import { CardContainer } from '../../components/cardContainer/CardContainer';
+import { Container } from '../../components';
+import './Form.scss';
 
 export const Form = () => {
-  const [t, i18n] = useTranslation('global');
+  const [t] = useTranslation('global');
 
   const [formData, setFormData] = useState({
     nombre: '',
-    invitados: '0',
+    invitados: '',
     confirmado: true,
   });
-
-  const [confirmed, setConfirmed] = useState(false);
 
   const onchange = (e: any) => {
     setFormData((pre) => {
@@ -30,21 +28,24 @@ export const Form = () => {
     });
   };
 
-  const updateConfirm = async () => {
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
     const userId = `${formData.nombre}_${Date.now()}_${
       formData.invitados
     }`.replace(/ +/g, '_');
     try {
+      if (formData.confirmado && formData.invitados === '0')
+        throw Error('confirmation_error_message');
       set(ref(db, `confirmation_boda_danny_elias/${userId}`), {
         ...formData,
         invitados: formData.confirmado ? formData.invitados : 0,
       });
       toast.success(
-        `${
-          formData.confirmado
-            ? 'Haz confirmado ir a la boda de Danny y Elías'
-            : 'Haz confirmado que no iras a la boda de Danny y Elías'
-        }`,
+        formData.confirmado
+          ? t('message.confirmation_message', {
+              couple: t('message.header_title'),
+            })
+          : t('message.confirmation_message_reject'),
         {
           duration: 5000,
           position: 'top-center',
@@ -56,56 +57,51 @@ export const Form = () => {
       //   invitados: formData.confirmado ? formData.invitados : 0,
       //   confirmado: formData.confirmado,
       // });
-
-      //   toast.success(
-      //     `${
-      //       formData.confirmado
-      //         ? 'Haz confirmado ir a la boda de Isaura & Alfonso! ♥️'
-      //         : 'Gracias por tu respuesta.'
-      //     }`,
-      //     {
-      //       duration: 5000,
-      //       position: 'top-center',
-      //     }
-      //   );
-    } catch (e) {
-      console.error('Error adding document: ', e);
+    } catch (error) {
+      if (error instanceof Error) {
+        toast.error(t(`message.${[error.message]}`), {
+          duration: 5000,
+          position: 'top-center',
+        });
+      }
     }
   };
 
   return (
-    <section className="form-container" id="form">
+    <Container id="form">
       <CardContainer>
-        <div className="header--form-container">
+        <div className="form_header_container">
           <h1 className="form-header">{t('message.confirm')}</h1>
           <span className="error-text">{t('message.event')}</span>
         </div>
-        <div className="form__confirmation--inputs">
-          <label htmlFor="" className="form__input--container">
-            Nombre Invitado
+        <form className="form_container" onSubmit={handleSubmit}>
+          <label htmlFor="nombre" className="form__input--container">
+            {t('message.form_name_label')}
             <input
               className="textbox"
               type="text"
-              placeholder="Ingresar Nombre.."
+              placeholder={t('message.form_name_placeholder')}
               name="nombre"
               onChange={(e) => onchange(e)}
               value={formData.nombre}
+              id="nombre"
             />
           </label>
-          <label htmlFor="" className="form__input--container">
-            Acompañantes
+          <label htmlFor="invitados" className="form__input--container">
+            {t('message.form_guest_label')}
             <input
               className="textbox"
               type="number"
-              placeholder="Ingresar Numero.."
+              placeholder={t('message.form_guest_placeholder')}
               name="invitados"
               disabled={!formData.confirmado}
               onChange={(e) => onchange(e)}
               value={formData.invitados}
+              id="invitados"
             />
           </label>
           <label htmlFor="" className="form__input--container check">
-            No asistiré
+            {t('message.form_not_attending')}
             <input
               className="form__box-check"
               type="checkbox"
@@ -113,25 +109,24 @@ export const Form = () => {
               name="confirmado"
               onChange={(e) => onchange(e)}
               checked={!formData.confirmado}
-              // @ts-ignore
-              value={formData.confirmado}
+              value={formData.confirmado as unknown as string}
             />
           </label>
-        </div>
-
-        <button
-          type="submit"
-          className="confirm-button"
-          onClick={updateConfirm}
-          disabled={
-            formData.confirmado
-              ? formData.nombre.length === 0 || formData.invitados.length === 0
-              : formData.nombre === ''
-          }
-        >
-          {confirmed ? t('message.submit') : t('message.submit')}
-        </button>
+          <button
+            type="submit"
+            className="confirm-button"
+            disabled={
+              formData.confirmado
+                ? formData.nombre.length === 0 ||
+                  formData.invitados.length === 0 ||
+                  formData.invitados === '0'
+                : formData.nombre === ''
+            }
+          >
+            {t('message.submit')}
+          </button>
+        </form>
       </CardContainer>
-    </section>
+    </Container>
   );
 };

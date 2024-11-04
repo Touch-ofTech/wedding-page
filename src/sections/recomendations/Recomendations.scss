@@ -1,19 +1,11 @@
 .grid_container {
-  margin-bottom: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 165px;
   gap: 48px;
 
-  @media (max-width: 768px) {
-    padding: 0 24px;
-  }
-
   .header {
-    font-family: 'Montaga';
-    font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 16px;
@@ -27,15 +19,9 @@
 
   .grid_card_container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-    max-width: 1024px;
-    @media (max-width: 870px) {
-      grid-template-columns: 1fr;
-    }
-  }
-}
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 
-.grid_inner_container {
-  padding: 48px;
+    gap: 32px;
+    width: 100%;
+  }
 }

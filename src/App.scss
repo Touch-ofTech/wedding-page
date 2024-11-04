@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  font-family: 'Montaga';
 }
 
 body {
@@ -15,20 +16,16 @@ a {
 }
 
 main {
-  // padding: 0;
-  // section {
-  //   width: 100%;
-  //   background-color: #e1e0e0;
-  //   position: relative;
-  //   scroll-snap-type: y mandatory;
-  //   scrollbar-width: none; //for firefox
-  //   // transition: 5ms all ease-out;
-  //   &::-webkit-scrollbar {
-  //     display: none; //other webBrowsers
-  //   }
-  // }
-  // padding-bottom: 100px;
   background: #fcf9f7;
+  .sections {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding: 64px 0;
+  }
+  @media (max-width: 768px) {
+    gap: 48px;
+  }
 }
 
 .button-music {
@@ -55,5 +52,4 @@ main {
   height: 120px;
   margin-top: 40px;
   padding: 80px;
-  font-family: 'Montaga';
 }

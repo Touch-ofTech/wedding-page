@@ -1,6 +1,7 @@
-import './Recomendations.scss';
 import { Card } from '../../components/card/Card';
 import { useTranslation } from 'react-i18next';
+import { Container } from '../../components';
+import './Recomendations.scss';
 
 const items = [
   {
@@ -22,18 +23,19 @@ const items = [
   },
 ];
 
-const Recomendations = () => {
-  const {t} = useTranslation('global')
+export const Recomendations = () => {
+  const { t } = useTranslation('global');
   return (
-    <div className="grid_container">
+    <Container id='recomendations'>
+      <div className="grid_container">
         <h1 className="header">{t('message.header_recommendations')}</h1>
         <div className="grid_card_container">
           {items.map((item) => (
             <Card card={item} />
           ))}
         </div>
-    </div>
+      </div>
+    </Container>
   );
 };
 
-export default Recomendations;
